@@ -16,10 +16,17 @@
 // Expect(pizza.addTopping("cheese").toEqual(Pizza {toppings: ["cheese"], size: undefined, price: 0}))
 
 // Describe: Pizza.prototype.addSize();
-// Test: It should set size variable of pizza object"
+// Test: "It should set size variable of pizza object"
 // Expect(pizza.addSize("large").toEqual(Pizza {toppings: [], size: "large", price: 0}))
 
+// Describe: Pizza.prototype.calculateCost();
+// Test: "It should add to this.price of pizza object depending on size."
+// Test: "This test assumes pre-existing pizza object has size: "medium"
+// Expect(pizza.calculateCost().toEqual(Pizza {toppings: [], size: "medium", price: 6}))
 
+// Test: "It should add 3 to this.price for each element in this.toppings array"
+// Test: "This test assumes this.toppings are ["cheese", "pepperoni"], and size is "medium"
+// Expect(pizza.calculateCost().toEqual(Pizza {toppings: ["cheese", "pepperoni"], size: "medium", price: 12})) 
 function Pizza() {
   this.toppings = [];
   this.size = undefined;
@@ -32,6 +39,21 @@ Pizza.prototype.addTopping = function(topping) {
 
 Pizza.prototype.addSize = function(size) {
   this.size = size;
+}
+
+Pizza.prototype.calculatePrice = function() {
+  if (this.size === "small") {
+    this.price += 4;
+  } else if (this.size === "medium") {
+    this.price += 6;
+  } else if (this.size === "large") {
+    this.price += 8;
+  } else {
+    this.price += 0;
+  }
+  for (i = 0; i < this.toppings.length; i ++) {
+    this.price += 3;
+  }
 }
 
 
