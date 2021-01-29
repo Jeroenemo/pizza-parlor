@@ -41,22 +41,34 @@
 // Test: "This test passes a newly constructed pizza object into the order object"
 // Expect(order.addPizza(pizza).toEqual(Order {order: {1: Pizza}, currentId: 1}))
 
+// Describe: Order.prototype.totalCost();
+// Test: "It should return sum of prices of pizzas in order object"
+// This: "This test calculates the total cost of an order with 2 pizzas, {price: 12, toppings: Array(2), size: "medium"}, and Pizza {price: 11, toppings: Array(1), size: "large"}"
+// Expect(order.totalCost().toEqual(23))
 function Order() {
   this.order = {};
   this.currentId = 0;
+  
 };
 Order.prototype.assignId = function() {
   this.currentId += 1;
-  return this.currentId
+  return this.currentId;
 };
 Order.prototype.addPizza = function(pizza) {
   pizza.id = this.assignId();
   this.order[pizza.id] = pizza;
 };
+Order.prototype.totalCost = function() {
+  let total = 0
+  for (id in this.order) {
+    total += this.order[id].price;
+  };
+  return total;
+};
 function Pizza() {
+  this.price = 0;
   this.toppings = [];
   this.size = undefined;
-  this.price = 0;
 };
 Pizza.prototype.addTopping = function(topping) {
   this.toppings.push(topping);
@@ -80,3 +92,16 @@ Pizza.prototype.calculatePrice = function() {
 };
 
 
+order = new Order()
+pizza1 = new Pizza()
+pizza2 = new Pizza()
+pizza1.addTopping("peppers")
+pizza1.addTopping("cheese")
+pizza1.addSize("medium")
+pizza2.addTopping("cheese")
+pizza2.addSize("large")
+pizza2.calculatePrice()
+pizza1.calculatePrice()
+order.addPizza(pizza1)
+order.addPizza(pizza2)
+pizza1.calculatePrice()
