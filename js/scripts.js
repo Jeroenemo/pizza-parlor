@@ -28,6 +28,7 @@ function Pizza() {
   this.size = undefined;
 };
 Pizza.prototype.addTopping = function(topping) {
+  topping = topping.replace(/\s+/g, '')
   if (topping !== "") {
     this.toppings.push(topping);
   }  
