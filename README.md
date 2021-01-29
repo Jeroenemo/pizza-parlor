@@ -12,7 +12,7 @@
 // Expect(pizza = new Pizza().toEqual(Pizza {toppings: [], size: undefined, price: 0}));
 
 // Describe: Pizza.prototype.addTopping();
-// Test: "It should push topping into pizza object"
+// Test: "It should push topping into pizza object if topping is not empty string"
 // Expect(pizza.addTopping("cheese").toEqual(Pizza {toppings: ["cheese"], size: undefined, price: 0}));
 
 // Describe: Pizza.prototype.addSize();

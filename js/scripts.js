@@ -31,11 +31,11 @@ Pizza.prototype.addSize = function(size) {
   this.size = size;
 };
 Pizza.prototype.calculatePrice = function() {
-  if (this.size === "small") {
+  if (this.size === "Small") {
     this.price += 4;
-  } else if (this.size === "medium") {
+  } else if (this.size === "Medium") {
     this.price += 6;
-  } else if (this.size === "large") {
+  } else if (this.size === "Large") {
     this.price += 8;
   } else {
     this.price += 0;
@@ -45,24 +45,35 @@ Pizza.prototype.calculatePrice = function() {
   };
 };
 
+let order = new Order();
+
 $(document).ready(function() {
   $("form#input").submit(function(event) {
     event.preventDefault();
+  });
+  $(":button").click(function() {
+    if (this.id === "add-pizza") { 
     let pizza = new Pizza();
-    pizza.addSize($("input:radio[name=size]:checked").val());
-    pizza.addTopping($("input#topping1").val());
-    pizza.addTopping($("input#topping2").val());
-    pizza.addTopping($("input#topping3").val());
-    pizza.addTopping($("input#topping4").val());
-    pizza.addTopping($("input#topping5").val());
-    pizza.addTopping($("input#topping6").val());
-    
-    console.log(pizza)
-    $("input#topping1").val("");
-    $("input#topping2").val("");
-    $("input#topping3").val("");
-    $("input#topping4").val("");
-    $("input#topping5").val("");
-    $("input#topping6").val("");
-  })
+      pizza.addSize($("input:radio[name=size]:checked").val());
+      pizza.addTopping($("input#topping1").val());
+      pizza.addTopping($("input#topping2").val());
+      pizza.addTopping($("input#topping3").val());
+      pizza.addTopping($("input#topping4").val());
+      pizza.addTopping($("input#topping5").val());
+      pizza.addTopping($("input#topping6").val());
+      pizza.calculatePrice();
+      order.addPizza(pizza);
+      console.log(pizza)
+      console.log(order)
+      $("input#topping1").val("");
+      $("input#topping2").val("");
+      $("input#topping3").val("");
+      $("input#topping4").val("");
+      $("input#topping5").val("");
+      $("input#topping6").val("");
+    } else if (this.id === "complete-order") {
+      order.totalCost();
+      console.log(order)
+    }
+  });
 })
