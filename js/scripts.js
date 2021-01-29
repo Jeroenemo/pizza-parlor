@@ -23,7 +23,9 @@ function Pizza() {
   this.size = undefined;
 };
 Pizza.prototype.addTopping = function(topping) {
-  this.toppings.push(topping);
+  if (topping !== "") {
+    this.toppings.push(topping);
+  }  
 };
 Pizza.prototype.addSize = function(size) {
   this.size = size;
@@ -42,3 +44,25 @@ Pizza.prototype.calculatePrice = function() {
     this.price += 3;
   };
 };
+
+$(document).ready(function() {
+  $("form#input").submit(function(event) {
+    event.preventDefault();
+    let pizza = new Pizza();
+    pizza.addSize($("input:radio[name=size]:checked").val());
+    pizza.addTopping($("input#topping1").val());
+    pizza.addTopping($("input#topping2").val());
+    pizza.addTopping($("input#topping3").val());
+    pizza.addTopping($("input#topping4").val());
+    pizza.addTopping($("input#topping5").val());
+    pizza.addTopping($("input#topping6").val());
+    
+    console.log(pizza)
+    $("input#topping1").val("");
+    $("input#topping2").val("");
+    $("input#topping3").val("");
+    $("input#topping4").val("");
+    $("input#topping5").val("");
+    $("input#topping6").val("");
+  })
+})
