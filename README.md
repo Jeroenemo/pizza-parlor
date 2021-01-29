@@ -45,3 +45,7 @@
 // Test: "It should return sum of prices of pizzas in order object"
 // This: "This test calculates the total cost of an order with 2 pizzas, {price: 12, toppings: Array(2), size: "medium"}, and Pizza {price: 11, toppings: Array(1), size: "large"}"
 // Expect(order.totalCost().toEqual(23))
+
+//Describe: Order.prototype.getPizza();
+//Test: "It should return pizza with inputted id."
+//Expect(order.getPizza(1).toEqual(Pizza {price: 0, toppings: Array(0), size: undefined, id: 1}))

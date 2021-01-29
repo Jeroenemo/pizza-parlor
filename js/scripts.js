@@ -18,6 +18,9 @@ Order.prototype.totalCost = function() {
   };
   this.total = total;
 };
+Order.prototype.getPizza = function(id) {
+  return this.pizzas[id];
+}
 function Pizza() {
   this.price = 0;
   this.toppings = [];
@@ -48,10 +51,14 @@ Pizza.prototype.calculatePrice = function() {
 
 let order = new Order();
 
-function displayOrder(order) {
+function displayOrder(ordertoDisplay) {
   let orderList = $("ul#order");
   let htmlForOrder = "";
-  Object.keys(order)
+  Object.keys(order.pizzas).forEach(function(key) {
+    const order = ordertoDisplay.getPizza(key);
+    htmlForOrder += "<li id=" + order.id + ">" + order.size + " pizza with " + order.toppings.join(", ") + "</li>"
+  });
+  orderList.html(htmlForOrder)
 }
 
 $(document).ready(function() {
@@ -80,7 +87,7 @@ $(document).ready(function() {
       $("input#topping6").val("");
     } else if (this.id === "complete-order") {
       order.totalCost();
-      console.log(order.total)
+      displayOrder(order)
     }
   });
 })
