@@ -48,4 +48,4 @@
 
 //Describe: Order.prototype.getPizza();
 //Test: "It should return pizza with inputted id."
-//Expect(order.getPizza(1).toEqual(Pizza {price: 0, toppings: Array(0), size: undefined, id: 1}))
+//Expect(order.getPizza(1).toEqual(Pizza {price: 0, toppings: Array(0), size: undefined, id: 1}));

@@ -75,22 +75,15 @@ $(document).ready(function() {
     if (this.id === "add-pizza") { 
     let pizza = new Pizza();
       pizza.addSize($("input:radio[name=size]:checked").val());
-      pizza.addTopping($("input#topping1").val());
-      pizza.addTopping($("input#topping2").val());
-      pizza.addTopping($("input#topping3").val());
-      pizza.addTopping($("input#topping4").val());
-      pizza.addTopping($("input#topping5").val());
-      pizza.addTopping($("input#topping6").val());
+      $('#toppings input:checked').each(function() {
+        console.log(this)
+        pizza.toppings.push($(this).val());
+        $("#input").trigger("reset");
+      });
       pizza.calculatePrice();
       order.addPizza(pizza);
       console.log(pizza)
       console.log(order)
-      $("input#topping1").val("");
-      $("input#topping2").val("");
-      $("input#topping3").val("");
-      $("input#topping4").val("");
-      $("input#topping5").val("");
-      $("input#topping6").val("");
     } else if (this.id === "complete-order") {
       $("div#order-input").hide();
       $("div#order-output").show();
