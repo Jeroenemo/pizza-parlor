@@ -28,6 +28,13 @@
 // Test: "This test assumes this.toppings are ["cheese", "pepperoni"], and size is "medium"
 // Expect(pizza.calculateCost().toEqual(Pizza {toppings: ["cheese", "pepperoni"], size: "medium", price: 12})) 
 
+// Describe Order();
+// Test: "It should instantiate Order objects with empty {} object "
+// Expect(order = new Order().toEqual(Order {order: {}}))
+function Order() {
+  this.order = {};
+}
+
 function Pizza() {
   this.toppings = [];
   this.size = undefined;
