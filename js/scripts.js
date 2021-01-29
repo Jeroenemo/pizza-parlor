@@ -8,9 +8,16 @@
 // Test: "It should instantiate new pizza objects with empty [] for toppings"
 // Expect(pizza = new Pizza("large").toEqual(Pizza {toppings: [], size: "large", price: 0}));
 
+// Describe: Pizza.prototype.addTopping();
+// Test: "It should push topping into pizza object"
+// Expect(pizza.addTopping("cheese").toEqual(Pizza {toppings: ["cheese"], size: "large", price: 0}))
+
 function Pizza(size) {
   this.toppings = [];
   this.size = size;
   this.price = 0;
 }
 
+Pizza.prototype.addTopping = function(topping) {
+  this.toppings.push(topping);
+}
