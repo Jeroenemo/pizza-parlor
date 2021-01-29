@@ -58,8 +58,13 @@ function displayOrder(ordertoDisplay) {
   let htmlForOrder = "";
   Object.keys(order.pizzas).forEach(function(key) {
     const order = ordertoDisplay.getPizza(key);
-    htmlForOrder += "<li>" + "One " + order.size + " pizza with " + order.toppings.join(", ").replace(/,(?=[^,]*$)/, ' and') + "</li>"
+    if (order.toppings.length === 0) {
+      htmlForOrder += "<li>" + "One " + order.size + " pizza with NO toppings..." + "</li>" 
+    } else {
+      htmlForOrder += "<li>" + "One " + order.size + " pizza with " + order.toppings.join(", ").replace(/,(?=[^,]*$)/, ' and') + "</li>"
+    }
   });
+  htmlForOrder += "<h2> Your total is: $" +ordertoDisplay.total+ "</h2>"
   orderList.html(htmlForOrder);
 };
 $(document).ready(function() {
