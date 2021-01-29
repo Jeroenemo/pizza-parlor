@@ -1,3 +1,4 @@
+// BUSINESS LOGIC
 function Order() {
   this.pizzas = {};
   this.total = 0;
@@ -48,19 +49,18 @@ Pizza.prototype.calculatePrice = function() {
     this.price += 3;
   };
 };
-
+// UI LOGIC
 let order = new Order();
 
 function displayOrder(ordertoDisplay) {
-  let orderList = $("ul#order");
+  let orderList = $("ol#order");
   let htmlForOrder = "";
   Object.keys(order.pizzas).forEach(function(key) {
     const order = ordertoDisplay.getPizza(key);
-    htmlForOrder += "<li id=" + order.id + ">" + "1 " + order.size + " pizza with " + order.toppings.join(", ") + "</li>"
+    htmlForOrder += "<li>" + "One " + order.size + " pizza with " + order.toppings.join(", ").replace(/,(?=[^,]*$)/, ' and') + "</li>"
   });
-  orderList.html(htmlForOrder)
-}
-
+  orderList.html(htmlForOrder);
+};
 $(document).ready(function() {
   $("form#input").submit(function(event) {
     event.preventDefault();
@@ -89,7 +89,7 @@ $(document).ready(function() {
       $("div#order-input").hide();
       $("div#order-output").show();
       order.totalCost();
-      displayOrder(order)
+      displayOrder(order);
     }
   });
 })
