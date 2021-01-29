@@ -28,38 +28,42 @@
 // Test: "This test assumes this.toppings are ["cheese", "pepperoni"], and size is "medium"
 // Expect(pizza.calculateCost().toEqual(Pizza {toppings: ["cheese", "pepperoni"], size: "medium", price: 12})) ;
 
-// Describe Order();
+// Describe: Order();
 // Test: "It should instantiate Order objects with empty {} object "
 // Expect(order = new Order().toEqual(Order {order: {}}));
 
-// Describe Order.prototype.assignId();
+// Describe: Order.prototype.assignId();
 // Test: "It should add current id to object, incrementing by 1."
 // Expect(order.assignId().toEqual(Order {order: {}, currentId: 1}));
+
+// Describe: Order.prototype.addPizza();
+// Test: "It should assign incrementing Id's to pizza objects as they are passed into the order object"
+// Test: "This test passes a newly constructed pizza object into the order object"
+// Expect(order.addPizza(pizza).toEqual(Order {order: {1: Pizza}, currentId: 1}))
 
 function Order() {
   this.order = {};
   this.currentId = 0;
-}
-
+};
 Order.prototype.assignId = function() {
   this.currentId += 1;
   return this.currentId
-}
-
+};
+Order.prototype.addPizza = function(pizza) {
+  pizza.id = this.assignId();
+  this.order[pizza.id] = pizza;
+};
 function Pizza() {
   this.toppings = [];
   this.size = undefined;
   this.price = 0;
-}
-
+};
 Pizza.prototype.addTopping = function(topping) {
   this.toppings.push(topping);
-}
-
+};
 Pizza.prototype.addSize = function(size) {
   this.size = size;
-}
-
+};
 Pizza.prototype.calculatePrice = function() {
   if (this.size === "small") {
     this.price += 4;
@@ -69,10 +73,10 @@ Pizza.prototype.calculatePrice = function() {
     this.price += 8;
   } else {
     this.price += 0;
-  }
+  };
   for (i = 0; i < this.toppings.length; i ++) {
     this.price += 3;
-  }
-}
+  };
+};
 
 
