@@ -1,3 +1,10 @@
 .jumbotron {
   margin: 5% 20% 5% 20%;
 }
+
+h1 {
+  text-align: center;
+}
+#order-output {
+  display: none;
+}

@@ -56,7 +56,7 @@ function displayOrder(ordertoDisplay) {
   let htmlForOrder = "";
   Object.keys(order.pizzas).forEach(function(key) {
     const order = ordertoDisplay.getPizza(key);
-    htmlForOrder += "<li id=" + order.id + ">" + order.size + " pizza with " + order.toppings.join(", ") + "</li>"
+    htmlForOrder += "<li id=" + order.id + ">" + "1 " + order.size + " pizza with " + order.toppings.join(", ") + "</li>"
   });
   orderList.html(htmlForOrder)
 }
@@ -86,6 +86,8 @@ $(document).ready(function() {
       $("input#topping5").val("");
       $("input#topping6").val("");
     } else if (this.id === "complete-order") {
+      $("div#order-input").hide();
+      $("div#order-output").show();
       order.totalCost();
       displayOrder(order)
     }

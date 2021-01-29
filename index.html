@@ -9,60 +9,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
   <title>Pizza Parlor</title>
-  <div class="jumbotron">
-    <form id="input">
-      <div class="radio">
-        <h2>Choose your size:</h2>
-        <label>
-          <input type="radio" name="size" value="Small" checked>
-          Small
-        </label>
-      </div>
-      <div class="radio">
-        <label>
-          <input type="radio" name="size" value="Medium">
-          Medium
-        </label>
-      </div>
-      <div class="radio">
-        <label>
-          <input type="radio" name="size" value="Large">
-          Large
-        </label>
-      </div>
-      <div class="form-group">
-        <h2>Add your toppings:</h2>
-        <label for="topping1">1st Topping:</label>
-        <input class="form-control" type="text" id="topping1">
-      </div>
-      <div class="form-group">
-        <label for="topping2">2nd Topping:</label>
-        <input class="form-control" type="text" id="topping2">
-      </div>
-      <div class="form-group">
-        <label for="topping3">3rd Topping:</label>
-        <input class="form-control" type="text" id="topping3">
-      </div>
-      <div class="form-group">
-        <label for="topping4">4th Topping:</label>
-        <input class="form-control" type="text" id="topping4">
-      </div>
-      <div class="form-group">
-        <label for="topping5">5th Topping:</label>
-        <input class="form-control" type="text" id="topping5">
-      </div>
-      <div class="form-group">
-        <label for="topping6">6th Topping:</label>
-        <input class="form-control" type="text" id="topping6">
-      </div>
-      <button type="submit" class="button" id="add-pizza">Another!</button>
-      <button type="complete" class="button" id="complete-order">Complete Order!</button>
-    </form>
-  </div>
-  <div class="jumbotron">
-    <h1>Order Summary</h1>
-    <ul id="order">
-
-    </ul>
+  <div id="order-input">
+    <div class="jumbotron">
+      <form id="input">
+        <div class="radio">
+          <h2>Choose your size:</h2>
+          <label>
+            <input type="radio" name="size" value="Small" checked>
+            Small
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="size" value="Medium">
+            Medium
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="size" value="Large">
+            Large
+          </label>
+        </div>
+        <div class="form-group">
+          <h2>Add your toppings:</h2>
+          <label for="topping1">1st Topping:</label>
+          <input class="form-control" type="text" id="topping1">
+        </div>
+        <div class="form-group">
+          <label for="topping2">2nd Topping:</label>
+          <input class="form-control" type="text" id="topping2">
+        </div>
+        <div class="form-group">
+          <label for="topping3">3rd Topping:</label>
+          <input class="form-control" type="text" id="topping3">
+        </div>
+        <div class="form-group">
+          <label for="topping4">4th Topping:</label>
+          <input class="form-control" type="text" id="topping4">
+        </div>
+        <div class="form-group">
+          <label for="topping5">5th Topping:</label>
+          <input class="form-control" type="text" id="topping5">
+        </div>
+        <div class="form-group">
+          <label for="topping6">6th Topping:</label>
+          <input class="form-control" type="text" id="topping6">
+        </div>
+        <button type="submit" class="button" id="add-pizza">Another!</button>
+        <button type="complete" class="button" id="complete-order">Complete Order!</button>
+      </form>
+    </div>
+  </div>  
+  <div id="order-output">
+    <div class="jumbotron">
+      <h1>Order Summary</h1>
+      <ul id="order">
+      </ul>
+    </div>
   </div>
 </html>
