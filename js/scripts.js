@@ -13,8 +13,11 @@
 
 // Describe: Pizza.prototype.addTopping();
 // Test: "It should push topping into pizza object"
-// Expect(pizza.addTopping("cheese").toEqual(Pizza {toppings: ["cheese"], size: "large", price: 0}))
+// Expect(pizza.addTopping("cheese").toEqual(Pizza {toppings: ["cheese"], size: undefined, price: 0}))
 
+// Describe: Pizza.prototype.addSize();
+// Test: It should set size variable of pizza object"
+// Expect(pizza.addSize("large").toEqual(Pizza {toppings: [], size: "large", price: 0}))
 
 
 function Pizza() {
@@ -26,3 +29,9 @@ function Pizza() {
 Pizza.prototype.addTopping = function(topping) {
   this.toppings.push(topping);
 }
+
+Pizza.prototype.addSize = function(size) {
+  this.size = size;
+}
+
+
