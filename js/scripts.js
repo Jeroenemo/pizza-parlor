@@ -5,8 +5,12 @@
 // Test: "It should instantiate new pizza objects with default price of 0"
 // Expect(pizza = new Pizza("cheese", "large").toEqual(Pizza {topping: "cheese", size: "large", price: 0}));
 
-function Pizza(topping, size) {
-  this.topping = topping;
+// Test: "It should instantiate new pizza objects with empty [] for toppings"
+// Expect(pizza = new Pizza("large").toEqual(Pizza {toppings: [], size: "large", price: 0}));
+
+function Pizza(size) {
+  this.toppings = [];
   this.size = size;
   this.price = 0;
 }
+
