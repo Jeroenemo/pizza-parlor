@@ -27,6 +27,7 @@
 // Test: "It should add 3 to this.price for each element in this.toppings array"
 // Test: "This test assumes this.toppings are ["cheese", "pepperoni"], and size is "medium"
 // Expect(pizza.calculateCost().toEqual(Pizza {toppings: ["cheese", "pepperoni"], size: "medium", price: 12})) 
+
 function Pizza() {
   this.toppings = [];
   this.size = undefined;
