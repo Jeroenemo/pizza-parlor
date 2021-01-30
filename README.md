@@ -94,4 +94,8 @@ Expect(order.totalCost().toEqual(23))
 Describe: Order.prototype.getPizza();
 Test: "It should return pizza with inputted id."
 Expect(order.getPizza(1).toEqual(Pizza {price: 0, toppings: Array(0), size: undefined, id: 1}));
+
+Describe: Pizza.prototype.addSauce();
+Test: "It should update souce attribute of Pizza object"
+Expect(pizza.addSauce(red).toEqual(Pizza {price: 0, toppings: Array(0), size: undefined, sauce: "Red", id: 1}))
 ```
