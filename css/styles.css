@@ -1,13 +1,19 @@
 .jumbotron {
   margin: 5% 20% 5% 20%;
+  font-family: 'Audiowide', cursive;
 }
 #toppings {
   column-count: 3;
-}
 
+}
 h1 {
   text-align: center;
 }
+
+h1, h2 {
+  font-family: 'Monoton', cursive;
+}
+
 #order-output {
   display: none;
 }
