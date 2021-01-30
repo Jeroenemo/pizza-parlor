@@ -2,7 +2,7 @@
 function Order() {
   this.pizzas = {};
   this.total = 0;
-  this.currentId = 0;
+  this.currentId = 1;
 };
 Order.prototype.assignId = function() {
   this.currentId += 1;
@@ -81,11 +81,12 @@ $(document).ready(function() {
   $(":button").click(function() {
     if (this.id === "add-pizza") { 
     let pizza = new Pizza();
-      pizza.addSize($("input:radio[name=size]:checked").val());
-      pizza.addSauce($("input:radio[name=sauce]:checked").val());
-      $('#toppings input:checked').each(function() {
-        pizza.toppings.push($(this).val());
-        $("#input").trigger("reset");
+    pizza.addSize($("input:radio[name=size]:checked").val());
+    pizza.addSauce($("input:radio[name=sauce]:checked").val());
+    $("#shopping-cart").text("Number of items in your cart: " + order.currentId);
+    $('#toppings input:checked').each(function() {
+      pizza.toppings.push($(this).val());
+      $("#input").trigger("reset");
       });
       pizza.calculatePrice();
       order.addPizza(pizza);
