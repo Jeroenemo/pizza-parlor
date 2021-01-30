@@ -4,7 +4,7 @@ body {
   background-position: center;
   background-size: cover;
 }
-h1 {
+h1, h2, p{
   text-align: center;
 }
 h1, h2 {
@@ -12,15 +12,32 @@ h1, h2 {
   font-family: 'Monoton', cursive;
   font-size: 3.5rem;
 }
+#title h1{
+  border-style: double;
+  background-color: blanchedalmond;
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
 .jumbotron {
-  margin: 5% 20% 5% 20%;
+  width: 870px;
+  margin: 5% auto;
   font-family: 'Audiowide', cursive;
   font-size: 1.2rem;
   background-color: whitesmoke;
 }
+.radio{
+  text-align: center;
+}
+#toppings {
+  column-count: 3;
+}
+#order-output {
+  display: none;
+}
 .button {
+  float: center;
   margin: 0 auto;
-  margin-top: 15px;
+  margin-top: 50px;
   margin-right: 10px;
   padding: 10px 30px;
   border: 1px solid black;
@@ -31,9 +48,4 @@ h1, h2 {
 .button:hover {
   background-color: rgb(100, 190, 220);
 }
-#toppings {
-  column-count: 3;
-}
-#order-output {
-  display: none;
-}
+

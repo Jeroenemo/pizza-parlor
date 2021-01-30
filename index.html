@@ -14,9 +14,13 @@
 <body  style="background-image: url('img/jumbo.jpg');">
   <div id="order-input">
     <div class="jumbotron">
+      <div id="title">
+        <h1>TOTALLY A PIZZA SHOP</h1>
+        <p>Trust us -- we're from <em>where</em> the pizza is from</p>
+      </div>
       <form id="input">
         <div class="radio">
-          <h2>Choose your size:</h2>
+          <h2>Choose your size</h2>
           
           <label>
             <input type="radio" name="size" value="Small" checked>
@@ -36,7 +40,8 @@
           </label>
         </div>
         
-        <h2>Add your toppings:</h2>
+        
+        <h2>Add your toppings</h2>
         <div id="toppings">
           <div class="form-group form-check">
             <label for="topping1">Mozzarella</label>
@@ -91,7 +96,7 @@
             <input type="checkbox" id="Onions" value="Onions">
           </div>
           <div class="form-group form-check">
-            <label for="topping6">Pinapple</label>
+            <label for="topping6">Pineapple</label>
             <input type="checkbox" id="Pinapple" value="Pinapple">
           </div>
           <div class="form-group form-check">
@@ -124,8 +129,10 @@
           </div>
         </div>
       </form>
-      <button type="submit" class="button" id="add-pizza">Add to Cart!</button>
-      <button type="complete" class="button" id="complete-order">Complete Order!</button>
+      <div class="col-md-12 text-center">
+        <button type="submit" class="button" id="add-pizza">Add to Cart!</button>
+        <button type="complete" class="button" id="complete-order">Complete Order!</button>
+      </div>
     </div>
   </div>  
   <div id="order-output">
@@ -133,7 +140,9 @@
       <h1>Order Summary</h1>
       <ol id="order">
       </ol>
-      <button type="reset" class="button" id="reset-page">Place a new Order</button>
+      <div class="col-md-12 text-center">
+        <button type="reset" class="button" id="reset-page">Place a new Order</button>
+      </div>
     </div>
   </div>
 </body>
