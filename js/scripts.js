@@ -66,7 +66,7 @@ function displayOrder(ordertoDisplay) {
   Object.keys(order.pizzas).forEach(function(key) {
     const order = ordertoDisplay.getPizza(key);
     if (order.toppings.length === 0) {
-      htmlForOrder += "<li>" + "One " + order.size + " cheese pizza with NO toppings..." + "</li>" 
+      htmlForOrder += "<li>" + "One " + order.size + " cheese pizza with " +order.sauce+ " Sauce and NO toppings..." + "</li>" 
     } else {
       htmlForOrder += "<li>" + "One " + order.size + " pizza with " + order.sauce + " Sauce and " + order.toppings.join(", ").replace(/,(?=[^,]*$)/, ' and') + "</li>"
     }
