@@ -83,15 +83,12 @@ $(document).ready(function() {
     let pizza = new Pizza();
       pizza.addSize($("input:radio[name=size]:checked").val());
       pizza.addSauce($("input:radio[name=sauce]:checked").val());
-      console.log(pizza)
       $('#toppings input:checked').each(function() {
         pizza.toppings.push($(this).val());
         $("#input").trigger("reset");
       });
       pizza.calculatePrice();
       order.addPizza(pizza);
-      console.log(pizza)
-      console.log(order)
     } else if (this.id === "complete-order") {
       $("div#order-input").hide();
       $("div#order-output").show();
