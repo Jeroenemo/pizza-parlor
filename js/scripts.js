@@ -64,7 +64,7 @@ function displayOrder(ordertoDisplay) {
       htmlForOrder += "<li>" + "One " + order.size + " pizza with " + order.toppings.join(", ").replace(/,(?=[^,]*$)/, ' and') + "</li>"
     }
   });
-  htmlForOrder += "<h3> Your total is: $" +ordertoDisplay.total+ "</h3>"
+  htmlForOrder += "<br><h3> Your total is: $" +ordertoDisplay.total+ "</h3>"
   orderList.html(htmlForOrder);
 };
 $(document).ready(function() {

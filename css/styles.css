@@ -1,6 +1,14 @@
+body {
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 .jumbotron {
   margin: 5% 20% 5% 20%;
   font-family: 'Audiowide', cursive;
+  background-color: whitesmoke;
 }
 #toppings {
   column-count: 3;
