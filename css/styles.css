@@ -4,13 +4,13 @@ body {
   background-position: center;
   background-size: cover;
 }
-h1, h2, p{
+h1, h2, p, .radio {
   text-align: center;
 }
 h1, h2 {
   padding: 10px 0;
   font-family: 'Monoton', cursive;
-  font-size: 3.5rem;
+  font-size: 3rem;
 }
 #title h1{
   border-style: double;
@@ -25,8 +25,9 @@ h1, h2 {
   font-size: 1.2rem;
   background-color: whitesmoke;
 }
-.radio{
-  text-align: center;
+
+input[type="radio"] {
+  margin: 0 20px 0 10px;
 }
 #toppings {
   column-count: 3;
