@@ -1,11 +1,9 @@
 .jumbotron {
   margin: 5% 20% 5% 20%;
 }
-
 #toppings {
   column-count: 3;
 }
-
 
 h1 {
   text-align: center;
