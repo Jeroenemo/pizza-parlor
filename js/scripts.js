@@ -89,6 +89,8 @@ $(document).ready(function() {
       $("div#order-output").show();
       order.totalCost();
       displayOrder(order);
+    } else if (this.id === "reset-page") {
+      location.reload();
     }
   });
 })
